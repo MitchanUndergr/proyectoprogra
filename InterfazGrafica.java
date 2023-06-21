@@ -27,13 +27,13 @@ class InterfazGrafica extends JFrame {
 
 
         panel1 = new JPanel();
-        panel1.setBounds(850, 398, 200, 30);
+        panel1.setBounds(620, 398, 200, 30);
         panel1.setOpaque(false);
 
-        String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día", "Hora"};
+        String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día"};
 
         // Crear las barras desplegables y establecer sus coordenadas
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             JComboBox<String> comboBox = new JComboBox<>();
             comboBox.setMaximumSize(new Dimension(200, comboBox.getPreferredSize().height));
 
@@ -56,7 +56,7 @@ class InterfazGrafica extends JFrame {
 
         // Creación del botón y establecer sus coordenadas
         JButton boton = new JButton("Buscar");
-        int buttonX = 850;
+        int buttonX = 620;
         int buttonY = 398;
 
         boton.setBounds(buttonX, buttonY, 200, 30); // Establecer posición y tamaño
@@ -163,7 +163,6 @@ class Asientos extends  JFrame{
         Font fontNueva = font.deriveFont(font.getSize() + 4.0f); // Aumentar en 2 puntos el tamaño de la fuente
         label.setFont(fontNueva);
         add(label);
-
 
     }
 }
