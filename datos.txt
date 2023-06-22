@@ -1,0 +1,9 @@
+12:00,Concepción,Santiago,Semi cama
+10:00,Concepción,Santiago,Salon cama
+14:00,Concepcion,Santiago,Suite cama
+09:00,Santiago,Concepción,Semi cama
+11:00,Santiago,Concepción,Suite cama
+16:00,Santiago,Curico,Semi cama
+12:00,Santiago,Curico,Semi cama
+09:00,Curico,Santiago,Semi cama
+13:00,Curico,Santiago,Semi cama
