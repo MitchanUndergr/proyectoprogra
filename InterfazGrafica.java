@@ -38,9 +38,6 @@ class InterfazGrafica extends JFrame {
         Ciudades ciudades = new Ciudades("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/Archivos/ciudades.txt");
         ArrayList<String> listaCiudades = ciudades.getCiudades();
 
-        Horario horario = new Horario("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/Archivos/horario.txt");
-        ArrayList<String> listaHoras= horario.getHoras();
-
         String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día"};
 
         JComboBox<String>[] comboBoxes = new JComboBox[3];
