@@ -527,8 +527,869 @@ public class Asientos extends JFrame {
             }
         });
 
+        botonAsiento9.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento9.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento9.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
 
+        botonAsiento10.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento10.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento10.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
 
+        botonAsiento11.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento11.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento11.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento12.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento12.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento12.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento13.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento13.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento13.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento14.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento14.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento14.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento15.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento15.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento15.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento16.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento16.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento16.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento17.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento17.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento17.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento18.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento18.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento18.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento19.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento19.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento19.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento20.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento20.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento20.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento21.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento21.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento21.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento22.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento22.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento22.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento23.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento23.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento23.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento24.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento24.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento24.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento25.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento25.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento25.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento26.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento26.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento26.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento27.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento27.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento27.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento28.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento28.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento28.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento29.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento29.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento29.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento30.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento30.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento30.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento31.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento31.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento31.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento32.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento32.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento32.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento33.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento33.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento33.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento34.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento34.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento34.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento35.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento35.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento35.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento36.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento36.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento36.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento37.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento37.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento37.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento38.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento38.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento38.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento39.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento39.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento39.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+
+            }
+        });
+        botonAsiento40.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento40.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento40.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento41.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento41.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento41.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento42.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento42.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento42.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento43.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento43.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento43.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
+
+        botonAsiento44.addActionListener(new ActionListener() {
+            int click = 0;
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                switch (click % 2) {
+                    case 0:
+                        ImageIcon imagenasiento2 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoResv.png");
+                        Image imagenasie2 = imagenasiento2.getImage();
+                        Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
+                        botonAsiento44.setIcon(asientolisto2);
+                        break;
+                    case 1:
+                        ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
+                        Image imagenasie3 = imagenasiento3.getImage();
+                        Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+                        ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        botonAsiento44.setIcon(asientolisto3);
+                        break;
+                }
+                click++;
+            }
+        });
     }
 
     public void agregafiltro(Pasajes pasaje){
