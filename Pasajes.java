@@ -1,3 +1,5 @@
+package org.example;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -52,14 +54,28 @@ public class Pasajes extends JFrame {
             botonComprar.setBounds(buttonX, buttonY, 100, 30);
             add(botonComprar);
 
-            botonComprar.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    dispose();
-                    Asientos nuevoasiento = new Asientos();
-                    nuevoasiento.agregafiltro(Pasajes.this);
-                    nuevoasiento.setVisible(true);
-                }
-            });
+            if(asiento.equals("Salon cama")){
+                botonComprar.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        dispose();
+                        AsientosDob nuevoasientodob = new AsientosDob();
+                        nuevoasientodob.agregafiltro(Pasajes.this);
+                        nuevoasientodob.setVisible(true);
+                    }
+                });
+            } else if (asiento.equals("Semi cama")) {
+                botonComprar.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        dispose();
+                        Asientos nuevoasiento = new Asientos();
+                        nuevoasiento.agregafiltro(Pasajes.this);
+                        nuevoasiento.setVisible(true);
+                    }
+                });
+
+            }
+
+
 
             buttonY += 90;
         }
@@ -76,7 +92,7 @@ public class Pasajes extends JFrame {
 
         setSize(screenWidth, screenHeight);
 
-        imagenfondo1 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/autobus.png").getImage();
+        imagenfondo1 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\autobus.png").getImage();
         imagenfondo1 = imagenfondo1.getScaledInstance(screenWidth, screenHeight, Image.SCALE_SMOOTH);
         JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
         setContentPane(principal);
@@ -116,7 +132,7 @@ public class Pasajes extends JFrame {
         fecha.setBounds(470, 110, 100, 30);
         add(fecha);
 
-        String archivo = "C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/Archivos/datos.txt";
+        String archivo = "C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\datos.txt";
         Datos datos = new Datos(archivo);
         List<DatosViaje> listaDatos = datos.leerDatos();
 
