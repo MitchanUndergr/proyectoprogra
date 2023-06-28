@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Asientos extends JFrame {
 
@@ -16,7 +17,8 @@ public class Asientos extends JFrame {
     private JButton botonAsiento17, botonAsiento18,botonAsiento19,botonAsiento20,botonAsiento21,botonAsiento22,botonAsiento23,botonAsiento24;
     private JButton botonAsiento25, botonAsiento26,botonAsiento27,botonAsiento28,botonAsiento29,botonAsiento30,botonAsiento31,botonAsiento32;
     private JButton botonAsiento40, botonAsiento33,botonAsiento34,botonAsiento35,botonAsiento36,botonAsiento37,botonAsiento38,botonAsiento39;
-    private JButton botonAsiento41, botonAsiento42,botonAsiento43,botonAsiento44,botonAsiento45,botonAsiento46;
+    private JButton botonAsiento41, botonAsiento42,botonAsiento43,botonAsiento44;
+    ArrayList<String> seleccionAsientos = new ArrayList<>();
     public Asientos() {
         setTitle("Asientos");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,17 +35,12 @@ public class Asientos extends JFrame {
         JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
         setContentPane(principal);
 
-        botonReserva = new JButton("Reservar");
-        botonReserva.setFont(botonReserva.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
-        botonReserva.setBounds(1100, 300, 100, 30);
-        add(botonReserva);
-
         //Asientos
 
         botonAsiento1 = new JButton();
         botonAsiento1.setFont(botonAsiento1.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
         botonAsiento1.setBounds(240, 300, 30, 30);
-        ImageIcon imagenasiento1 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\images.png");
+        ImageIcon imagenasiento1 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp1.png");
         Image imagenasie1 = imagenasiento1.getImage();
         Image nuevoasiento1 = imagenasie1.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
         ImageIcon asientolisto1= new ImageIcon(nuevoasiento1);
@@ -335,7 +332,6 @@ public class Asientos extends JFrame {
         add(botonAsiento44);
 
 
-
         botonAsiento1.addActionListener(new ActionListener() {
             int click = 0;
             @Override
@@ -347,6 +343,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento1.setIcon(asientolisto2);
+                        seleccionAsientos.add("A1");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -354,6 +351,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento1.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A1");
                         break;
                 }
                 click++;
@@ -371,6 +369,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento2.setIcon(asientolisto2);
+                        seleccionAsientos.add("B2");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -378,6 +377,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento2.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B2");
                         break;
                 }
                 click++;
@@ -394,6 +394,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento3.setIcon(asientolisto2);
+                        seleccionAsientos.add("C3");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -401,6 +402,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento3.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C3");
                         break;
                 }
                 click++;
@@ -418,6 +420,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento4.setIcon(asientolisto2);
+                        seleccionAsientos.add("D4");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -425,6 +428,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento4.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D4");
                         break;
                 }
                 click++;
@@ -442,6 +446,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento5.setIcon(asientolisto2);
+                        seleccionAsientos.add("A5");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -449,6 +454,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento5.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A5");
                         break;
                 }
                 click++;
@@ -466,6 +472,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento6.setIcon(asientolisto2);
+                        seleccionAsientos.add("B6");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -473,6 +480,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento6.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B6");
                         break;
                 }
                 click++;
@@ -490,6 +498,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento7.setIcon(asientolisto2);
+                        seleccionAsientos.add("C7");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -497,6 +506,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento7.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C7");
                         break;
                 }
                 click++;
@@ -514,6 +524,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento8.setIcon(asientolisto2);
+                        seleccionAsientos.add("D8");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -521,6 +532,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento8.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D8");
                         break;
                 }
                 click++;
@@ -538,6 +550,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento9.setIcon(asientolisto2);
+                        seleccionAsientos.add("A9");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -545,6 +558,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento9.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A9");
                         break;
                 }
                 click++;
@@ -562,6 +576,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento10.setIcon(asientolisto2);
+                        seleccionAsientos.add("B10");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -569,6 +584,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento10.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B10");
                         break;
                 }
                 click++;
@@ -586,6 +602,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento11.setIcon(asientolisto2);
+                        seleccionAsientos.add("C11");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -593,6 +610,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento11.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C11");
                         break;
                 }
                 click++;
@@ -610,6 +628,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento12.setIcon(asientolisto2);
+                        seleccionAsientos.add("D12");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -617,6 +636,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento12.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D12");
                         break;
                 }
                 click++;
@@ -634,6 +654,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento13.setIcon(asientolisto2);
+                        seleccionAsientos.add("A13");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -641,6 +662,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento13.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A13");
                         break;
                 }
                 click++;
@@ -658,6 +680,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento14.setIcon(asientolisto2);
+                        seleccionAsientos.add("B14");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -665,6 +688,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento14.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B14");
                         break;
                 }
                 click++;
@@ -682,12 +706,14 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento15.setIcon(asientolisto2);
+                        seleccionAsientos.add("C15");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
                         Image imagenasie3 = imagenasiento3.getImage();
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
+                        seleccionAsientos.remove("C15");
                         botonAsiento15.setIcon(asientolisto3);
                         break;
                 }
@@ -706,6 +732,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento16.setIcon(asientolisto2);
+                        seleccionAsientos.add("D16");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -713,6 +740,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento16.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D16");
                         break;
                 }
                 click++;
@@ -730,6 +758,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento17.setIcon(asientolisto2);
+                        seleccionAsientos.add("A17");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -737,6 +766,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento17.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A17");
                         break;
                 }
                 click++;
@@ -754,6 +784,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento18.setIcon(asientolisto2);
+                        seleccionAsientos.add("B18");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -761,6 +792,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento18.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B18");
                         break;
                 }
                 click++;
@@ -778,6 +810,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento19.setIcon(asientolisto2);
+                        seleccionAsientos.add("C19");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -785,6 +818,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento19.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C19");
                         break;
                 }
                 click++;
@@ -802,6 +836,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento20.setIcon(asientolisto2);
+                        seleccionAsientos.add("D20");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -809,6 +844,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento20.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D20");
                         break;
                 }
                 click++;
@@ -826,6 +862,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento21.setIcon(asientolisto2);
+                        seleccionAsientos.add("A21");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -833,6 +870,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento21.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A21");
                         break;
                 }
                 click++;
@@ -850,6 +888,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento22.setIcon(asientolisto2);
+                        seleccionAsientos.add("B22");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -857,6 +896,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento22.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B22");
                         break;
                 }
                 click++;
@@ -874,6 +914,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento23.setIcon(asientolisto2);
+                        seleccionAsientos.add("C23");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -881,6 +922,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento23.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C23");
                         break;
                 }
                 click++;
@@ -898,6 +940,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento24.setIcon(asientolisto2);
+                        seleccionAsientos.add("D24");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -905,6 +948,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento24.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D24");
                         break;
                 }
                 click++;
@@ -922,6 +966,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento25.setIcon(asientolisto2);
+                        seleccionAsientos.add("A25");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -929,6 +974,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento25.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A25");
                         break;
                 }
                 click++;
@@ -946,6 +992,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento26.setIcon(asientolisto2);
+                        seleccionAsientos.add("B26");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -953,6 +1000,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento26.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B26");
                         break;
                 }
                 click++;
@@ -970,6 +1018,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento27.setIcon(asientolisto2);
+                        seleccionAsientos.add("C27");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -977,6 +1026,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento27.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C27");
                         break;
                 }
                 click++;
@@ -994,6 +1044,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento28.setIcon(asientolisto2);
+                        seleccionAsientos.add("D28");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1001,6 +1052,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento28.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D28");
                         break;
                 }
                 click++;
@@ -1018,6 +1070,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento29.setIcon(asientolisto2);
+                        seleccionAsientos.add("A29");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1025,6 +1078,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento29.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A29");
                         break;
                 }
                 click++;
@@ -1042,6 +1096,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento30.setIcon(asientolisto2);
+                        seleccionAsientos.add("B30");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1049,6 +1104,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento30.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B30");
                         break;
                 }
                 click++;
@@ -1066,6 +1122,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento31.setIcon(asientolisto2);
+                        seleccionAsientos.add("C31");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1073,6 +1130,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento31.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C31");
                         break;
                 }
                 click++;
@@ -1090,6 +1148,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento32.setIcon(asientolisto2);
+                        seleccionAsientos.add("D32");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1097,6 +1156,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento32.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D32");
                         break;
                 }
                 click++;
@@ -1114,6 +1174,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento33.setIcon(asientolisto2);
+                        seleccionAsientos.add("A33");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1121,6 +1182,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento33.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A33");
                         break;
                 }
                 click++;
@@ -1138,6 +1200,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento34.setIcon(asientolisto2);
+                        seleccionAsientos.add("B34");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1145,6 +1208,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento34.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B34");
                         break;
                 }
                 click++;
@@ -1162,6 +1226,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento35.setIcon(asientolisto2);
+                        seleccionAsientos.add("C35");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1169,6 +1234,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento35.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C35");
                         break;
                 }
                 click++;
@@ -1186,6 +1252,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento36.setIcon(asientolisto2);
+                        seleccionAsientos.add("D36");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1193,6 +1260,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento36.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D36");
                         break;
                 }
                 click++;
@@ -1210,6 +1278,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento37.setIcon(asientolisto2);
+                        seleccionAsientos.add("A37");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1217,6 +1286,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento37.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A37");
                         break;
                 }
                 click++;
@@ -1234,6 +1304,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento38.setIcon(asientolisto2);
+                        seleccionAsientos.add("B38");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1241,6 +1312,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento38.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B38");
                         break;
                 }
                 click++;
@@ -1258,6 +1330,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento39.setIcon(asientolisto2);
+                        seleccionAsientos.add("C39");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1265,6 +1338,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento39.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C39");
                         break;
                 }
                 click++;
@@ -1282,6 +1356,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento40.setIcon(asientolisto2);
+                        seleccionAsientos.add("D40");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1289,6 +1364,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento40.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D40");
                         break;
                 }
                 click++;
@@ -1306,6 +1382,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento41.setIcon(asientolisto2);
+                        seleccionAsientos.add("A41");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1313,6 +1390,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento41.setIcon(asientolisto3);
+                        seleccionAsientos.remove("A41");
                         break;
                 }
                 click++;
@@ -1330,6 +1408,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento42.setIcon(asientolisto2);
+                        seleccionAsientos.add("B42");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1337,6 +1416,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento42.setIcon(asientolisto3);
+                        seleccionAsientos.remove("B42");
                         break;
                 }
                 click++;
@@ -1354,6 +1434,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento43.setIcon(asientolisto2);
+                        seleccionAsientos.add("C43");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1361,6 +1442,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento43.setIcon(asientolisto3);
+                        seleccionAsientos.remove("C43");
                         break;
                 }
                 click++;
@@ -1378,6 +1460,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                         botonAsiento44.setIcon(asientolisto2);
+                        seleccionAsientos.add("D44");
                         break;
                     case 1:
                         ImageIcon imagenasiento3 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\AsientoDisp2.png");
@@ -1385,6 +1468,7 @@ public class Asientos extends JFrame {
                         Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                         ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                         botonAsiento44.setIcon(asientolisto3);
+                        seleccionAsientos.remove("D44");
                         break;
                 }
                 click++;
@@ -1421,6 +1505,24 @@ public class Asientos extends JFrame {
         fecha.setBounds(470, 110, 100, 30);
         add(fecha);
 
+        botonReserva = new JButton("Reservar");
+        botonReserva.setFont(botonReserva.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
+        botonReserva.setBounds(1100, 300, 100, 30);
+        add(botonReserva);
+
+        botonReserva.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Reserva nuevareserva = new Reserva();
+
+                nuevareserva.setVisible(true);
+            }
+        });
 
     }
-}
+    public ArrayList getSeleccion() {
+        return seleccionAsientos;
+    }
+
+
+        }
