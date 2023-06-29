@@ -93,6 +93,7 @@ public class Asientos extends JFrame {
 
 
 
+
         botonAsiento9 = new JButton();
         botonAsiento9.setFont(botonAsiento9.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
         botonAsiento9.setBounds(240, 380, 30, 30);
@@ -1514,7 +1515,8 @@ public class Asientos extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Reserva nuevareserva = new Reserva();
-
+                nuevareserva.agregaasieentos(Asientos.this);
+                nuevareserva.agregafiltro(Asientos.this);
                 nuevareserva.setVisible(true);
             }
         });
@@ -1525,4 +1527,15 @@ public class Asientos extends JFrame {
     }
 
 
-        }
+    public String getDia() {
+        return dia;
+    }
+
+    public String getDesde() {
+        return desde;
+    }
+
+    public String getHasta() {
+        return hasta;
+    }
+}
