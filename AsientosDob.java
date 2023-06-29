@@ -2011,7 +2011,8 @@ public class AsientosDob extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Reserva nuevareserva = new Reserva();
-                nuevareserva.agregaasieentos(AsientosDob.this);
+                nuevareserva.agregaasieentosDob(AsientosDob.this);
+                nuevareserva.agregafiltro(AsientosDob.this);
                 nuevareserva.setVisible(true);
             }
         });
@@ -2020,6 +2021,19 @@ public class AsientosDob extends JFrame {
     public ArrayList getSeleccion() {
         return seleccionAsientos;
     }
+    public String getDia() {
+        return dia;
+    }
+
+    public String getDesde() {
+        return desde;
+    }
+
+    public String getHasta() {
+        return hasta;
+    }
 
 
 }
+
+
