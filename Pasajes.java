@@ -31,6 +31,8 @@ public class Pasajes extends JFrame {
             String salida=datosViaje.getSalida();
             String asiento=datosViaje.getTipoAsiento();
 
+            //crear int precio= datosviaje.getprecio dps tiene q ser llamado en asientos y dps en reserva
+
             labels[0] = new JLabel("Origen: " + origen);
             labels[1]= new JLabel("Salida: " + salida);
             labels[2]= new JLabel("Destino: " + destino);
@@ -48,7 +50,6 @@ public class Pasajes extends JFrame {
            for(int i=0;i<4;i++){
                y[i]+=90;
            }
-
             botonComprar = new JButton("Comprar");
             botonComprar.setFont(botonComprar.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
             botonComprar.setBounds(buttonX, buttonY, 100, 30);
