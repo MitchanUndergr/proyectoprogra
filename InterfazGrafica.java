@@ -11,9 +11,16 @@ class InterfazGrafica extends JFrame {
     private JPanel panel1;
     private String origen;
     private String destino;
+
+    private JComboBox<String>[] comboBoxes;
     private String fecha;
+
+    private JButton boton;
+    public ArrayList<String >asiento,asientoDob;
     public InterfazGrafica() {
         // Configuración de la ventana
+
+
         setTitle("Autobuses C&N");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null); // Establecer null layout
@@ -40,7 +47,7 @@ class InterfazGrafica extends JFrame {
 
         String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día"};
 
-        JComboBox<String>[] comboBoxes = new JComboBox[3];
+        comboBoxes = new JComboBox[3];
 
         // Crear las barras desplegables y establecer sus coordenadas
         for (int i = 0; i < 3; i++) {
@@ -93,7 +100,7 @@ class InterfazGrafica extends JFrame {
 
 
         // Creación del botón y establecer sus coordenadas
-        JButton boton = new JButton("Buscar");
+        boton = new JButton("Buscar");
         int buttonX = 620;
         int buttonY = 398;
 
@@ -127,6 +134,14 @@ class InterfazGrafica extends JFrame {
         });
 
 
+
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public void traslado(){
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndexBarra1 = comboBoxes[0].getSelectedIndex();
@@ -143,6 +158,15 @@ class InterfazGrafica extends JFrame {
                     Pasajes nuevopasaje = new Pasajes();
                     nuevopasaje.filtro(InterfazGrafica.this);
                     nuevopasaje.setVisible(true);
+                    nuevopasaje.interfazgrafica(InterfazGrafica.this);
+                    if(getAsiento()!=null) {
+                        nuevopasaje.setasiento=getAsiento();
+                        nuevopasaje.getasiento();
+                    }
+                    else if(getAsientoDob()!=null){
+                        nuevopasaje.setasientodob=getAsientoDob();
+                        nuevopasaje.getasientodob();
+                    }
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Selecciona un origen, destino y horario válidos");
@@ -151,15 +175,25 @@ class InterfazGrafica extends JFrame {
         });
     }
 
-    public String getOrigen() {
-        return origen;
-    }
-
     public String getDestino() {
         return destino;
     }
 
     public String getFecha() {
         return fecha;
+    }
+
+    public ArrayList<String> arrayAsientosDob(Reserva reserva){
+        return reserva.getArrayasientodob();
+    }
+    public ArrayList<String> arrayAsientos(Reserva reserva){
+        return reserva.getArrayasientos();
+    }
+
+    public ArrayList<String> getAsiento(){
+        return asiento;
+    }
+    public ArrayList<String> getAsientoDob(){
+        return asientoDob;
     }
 }
