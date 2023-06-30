@@ -1,4 +1,3 @@
-package org.example;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,9 +46,9 @@ public class Pasajes extends JFrame {
                 add(labels[j]);
             }
 
-           for(int i=0;i<4;i++){
-               y[i]+=90;
-           }
+            for(int i=0;i<4;i++){
+                y[i]+=90;
+            }
             botonComprar = new JButton("Comprar");
             botonComprar.setFont(botonComprar.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
             botonComprar.setBounds(buttonX, buttonY, 100, 30);
@@ -61,6 +60,11 @@ public class Pasajes extends JFrame {
                         dispose();
                         AsientosDob nuevoasientodob = new AsientosDob();
                         nuevoasientodob.agregafiltro(Pasajes.this);
+                        if(getasientodob()!=null){
+                            nuevoasientodob.seleccionAsientos=getasiento();
+                            //System.out.println("imprimemeaqui");
+                        }
+                        nuevoasientodob.elegirdob();
                         nuevoasientodob.setVisible(true);
                     }
                 });
@@ -70,6 +74,11 @@ public class Pasajes extends JFrame {
                         dispose();
                         Asientos nuevoasiento = new Asientos();
                         nuevoasiento.agregafiltro(Pasajes.this);
+                        if(getasiento()!=null){
+                            nuevoasiento.seleccionAsientos=getasiento();
+                            //System.out.println("imprimeme");
+                        }
+                        nuevoasiento.elegir();
                         nuevoasiento.setVisible(true);
                     }
                 });
@@ -93,7 +102,7 @@ public class Pasajes extends JFrame {
 
         setSize(screenWidth, screenHeight);
 
-        imagenfondo1 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\autobus.png").getImage();
+        imagenfondo1 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/autobus.png").getImage();
         imagenfondo1 = imagenfondo1.getScaledInstance(screenWidth, screenHeight, Image.SCALE_SMOOTH);
         JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
         setContentPane(principal);
@@ -133,7 +142,7 @@ public class Pasajes extends JFrame {
         fecha.setBounds(470, 110, 100, 30);
         add(fecha);
 
-        String archivo = "C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\datos.txt";
+        String archivo = "C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/Archivos/datos.txt";
         Datos datos = new Datos(archivo);
         List<DatosViaje> listaDatos = datos.leerDatos();
 
@@ -155,5 +164,18 @@ public class Pasajes extends JFrame {
     }
     public String getDia(){
         return fechas;
+    }
+
+    public InterfazGrafica interfazgrafica(InterfazGrafica esta){
+        return esta;
+    }
+    public ArrayList<String> setasiento,setasientodob;
+
+    public ArrayList<String> getasiento(){
+        return setasiento;
+    }
+
+    public ArrayList<String> getasientodob(){
+        return setasientodob;
     }
 }
