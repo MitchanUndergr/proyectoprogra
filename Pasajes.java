@@ -60,9 +60,10 @@ public class Pasajes extends JFrame {
                         dispose();
                         AsientosDob nuevoasientodob = new AsientosDob();
                         nuevoasientodob.agregafiltro(Pasajes.this);
+
                         if(getasientodob()!=null){
-                            nuevoasientodob.seleccionAsientos=getasiento();
-                            //System.out.println("imprimemeaqui");
+                            nuevoasientodob.datosdob=getDatosdob();
+                            nuevoasientodob.seleccionAsientosdob=getasientodob();
                         }
                         nuevoasientodob.elegirdob();
                         nuevoasientodob.setVisible(true);
@@ -84,14 +85,9 @@ public class Pasajes extends JFrame {
                 });
 
             }
-
-
-
             buttonY += 90;
         }
     }
-
-
     public Pasajes() {
         setTitle("Mi compra");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -164,6 +160,12 @@ public class Pasajes extends JFrame {
     }
     public String getDia(){
         return fechas;
+    }
+
+    public ArrayList<Object[]> datosdob;
+
+    public ArrayList<Object[]> getDatosdob(){
+        return datosdob;
     }
 
     public InterfazGrafica interfazgrafica(InterfazGrafica esta){
