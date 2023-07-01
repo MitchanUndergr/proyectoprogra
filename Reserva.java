@@ -1,19 +1,15 @@
-package org.example;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Reserva extends JFrame {
 
     Image imagenfondo1;
     private JPanel panel1;
+    public ArrayList<String> arrayasientodob,arrayasientos;
     String desde,hasta,dia;
-    private JButton botonExit;
-
+    public ArrayList<Object[]> datosdobreserva,datosreserva;
     public Reserva() {
 
         setTitle("Reserva");
@@ -25,7 +21,7 @@ public class Reserva extends JFrame {
 
         setSize(screenWidth, screenHeight);
 
-        imagenfondo1 = new ImageIcon("C:\\Users\\LENOVO\\IdeaProjects\\untitled32\\src\\main\\java\\org\\example\\autobus3.png").getImage();
+        imagenfondo1 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/compra.png").getImage();
         imagenfondo1 = imagenfondo1.getScaledInstance(screenWidth, screenHeight, Image.SCALE_SMOOTH);
         JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
         setContentPane(principal);
@@ -34,32 +30,29 @@ public class Reserva extends JFrame {
         panel1.setBounds(850, 398, 200, 30);
         panel1.setOpaque(false);
 
-        botonExit = new JButton("Reservar");
-        botonExit.setFont(botonExit.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
-        botonExit.setBounds(1100, 300, 100, 30);
-        add(botonExit);
-
-
-
-
 
     }
-    public void agregaasieentosDob(AsientosDob asientos){
+
+   public ArrayList<String> agregaasieentosDob(AsientosDob asientos){
+        ArrayList asie=asientos.getSelecciondob();
+
+        return asie;
+    }
+
+    public ArrayList<String> agregaasieentos(Asientos asientos){
         ArrayList asie=asientos.getSeleccion();
-        System.out.println(asie.get(0));
-        System.out.println(asie.get(1));
-
+        return  asie;
     }
 
-    public void agregaasieentos(Asientos asientos){
-        asientos.getSeleccion();
-        ArrayList asie=asientos.getSeleccion();
-        System.out.println(asie.get(0));
-        System.out.println(asie.get(1));asientos.getSeleccion().size();
-        System.out.println(asientos.getSeleccion().size());
-
-
+    public ArrayList<String> getArrayasientodob(){
+        return arrayasientodob;
     }
+
+    public ArrayList<String> getArrayasientos(){
+        return arrayasientos;
+    }
+
+
     public void agregafiltro(Asientos asientos){
         dia=asientos.getDia();
         desde=asientos.getDesde();
@@ -91,17 +84,10 @@ public class Reserva extends JFrame {
 
         JLabel[] labels = new JLabel[6];
 
-        int calFinal= asientos.getSeleccion().size()*13000;
-        int cantAsientos=asientos.getSeleccion().size();
+        int calFinal= asientos.getSeleAsientos().size()*13000;
+        int cantAsientos=asientos.getSeleAsientos().size();
 
-
-        labels[0] = new JLabel("Origen: " + desde);
-        labels[0].setForeground(new Color(35, 35, 35)); // Color de fuente
-        labels[0].setFont(fontNueva);
-        labels[0].setBounds(300, 300, 600, 30);
-        add(labels[0]);
-
-        labels[1]= new JLabel("Destino: " + hasta);
+        labels[1]= new JLabel("DETALLES DE LA COMPRA");
         labels[1].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[1].setFont(fontNueva);
         labels[1].setBounds(300, 350, 600, 30);
@@ -113,7 +99,7 @@ public class Reserva extends JFrame {
         labels[2].setBounds(300, 400, 600, 30);
         add(labels[2]);
 
-        labels[3]= new JLabel("Asientos : " + asientos.getSeleccion());
+        labels[3]= new JLabel("Asientos : " + asientos.getSeleAsientos());
         labels[3].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[3].setFont(fontNueva);
         labels[3].setBounds(300, 450, 600, 30);
@@ -131,9 +117,46 @@ public class Reserva extends JFrame {
         labels[5].setBounds(300, 550, 600, 30);
         add(labels[5]);
 
+        SwingUtilities.invokeLater(() -> {
+
+            int option = JOptionPane.showOptionDialog(
+                    null,
+                    "¿Desea realizar una nueva compra?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[]{"Sí", "No"},
+                    "Sí"
+            );
+
+            if (option == JOptionPane.YES_OPTION) {
+                // Abrir una nueva interfaz gráfica
+
+
+                EventQueue.invokeLater(() -> {
+                    InterfazGrafica nuevaInterfaz = new InterfazGrafica();
+                    ArrayList<String> asien=nuevaInterfaz.arrayAsientos(this);
+                    nuevaInterfaz.asiento=asien;
+                    nuevaInterfaz.getAsiento();
+                    //System.out.println(nuevaInterfaz.asiento.get(0));
+                    nuevaInterfaz.traslado();
+                    //System.out.println("HOLI");
+                    nuevaInterfaz.setVisible(true);
+                    dispose();
+                });
+            } else {
+                // Cerrar la aplicación
+                System.exit(0);
+            }
+
+
+        });
+
+
     }
 
-    public void agregafiltro(AsientosDob asientos){
+    public void agregafiltroDob(AsientosDob asientos){
         dia=asientos.getDia();
         desde=asientos.getDesde();
         hasta=asientos.getHasta();
@@ -164,17 +187,11 @@ public class Reserva extends JFrame {
 
         JLabel[] labels = new JLabel[6];
 
-        int calFinal= asientos.getSeleccion().size()*21000;
-        int cantAsientos=asientos.getSeleccion().size();
+        int calFinal= asientos.getSeleasientosdob().size()*21000;
+        int cantAsientos=asientos.getSeleasientosdob().size();
 
 
-        labels[0] = new JLabel("Origen: " + desde);
-        labels[0].setForeground(new Color(35, 35, 35)); // Color de fuente
-        labels[0].setFont(fontNueva);
-        labels[0].setBounds(300, 300, 600, 30);
-        add(labels[0]);
-
-        labels[1]= new JLabel("Destino: " + hasta);
+        labels[1]= new JLabel("DETALLES DE LA COMPRA");
         labels[1].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[1].setFont(fontNueva);
         labels[1].setBounds(300, 350, 600, 30);
@@ -186,7 +203,7 @@ public class Reserva extends JFrame {
         labels[2].setBounds(300, 400, 600, 30);
         add(labels[2]);
 
-        labels[3]= new JLabel("Asientos : " + asientos.getSeleccion());
+        labels[3]= new JLabel("Asientos : " + asientos.getSeleasientosdob());
         labels[3].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[3].setFont(fontNueva);
         labels[3].setBounds(300, 450, 600, 30);
@@ -203,6 +220,40 @@ public class Reserva extends JFrame {
         labels[5].setFont(fontNueva);
         labels[5].setBounds(300, 550, 600, 30);
         add(labels[5]);
+
+        SwingUtilities.invokeLater(() -> {
+
+            int option = JOptionPane.showOptionDialog(
+                    null,
+                    "¿Desea realizar una nueva compra?",
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new Object[]{"Sí", "No"},
+                    "Sí"
+            );
+
+            if (option == JOptionPane.YES_OPTION) {
+                // Abrir una nueva interfaz gráfica
+
+                EventQueue.invokeLater(() -> {
+                    InterfazGrafica nuevaInterfaz = new InterfazGrafica();
+                    ArrayList<String> asien2= nuevaInterfaz.arrayAsientosDob(this);
+                    nuevaInterfaz.datadob=datosdobreserva;
+                    nuevaInterfaz.getDatadob();
+                    nuevaInterfaz.asientoDob=asien2;
+                    nuevaInterfaz.getAsientoDob();
+                    nuevaInterfaz.trasladodob();
+                    nuevaInterfaz.setVisible(true);
+                    dispose();
+                });
+            } else {
+                // Cerrar la aplicación
+                System.exit(0);
+            }
+
+        });
 
     }
 
