@@ -17,6 +17,8 @@ class InterfazGrafica extends JFrame {
 
     private JButton boton;
     public ArrayList<String >asiento,asientoDob;
+    public  ArrayList<Object[]> datadob = new ArrayList<>();
+    public  ArrayList<Object[]> data = new ArrayList<>();
     public InterfazGrafica() {
         // Configuración de la ventana
 
@@ -159,11 +161,41 @@ class InterfazGrafica extends JFrame {
                     nuevopasaje.filtro(InterfazGrafica.this);
                     nuevopasaje.setVisible(true);
                     nuevopasaje.interfazgrafica(InterfazGrafica.this);
+
                     if(getAsiento()!=null) {
                         nuevopasaje.setasiento=getAsiento();
                         nuevopasaje.getasiento();
                     }
-                    else if(getAsientoDob()!=null){
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Selecciona un origen, destino y horario válidos");
+                }
+            }
+        });
+    }
+
+    public void trasladodob(){
+        boton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int selectedIndexBarra1 = comboBoxes[0].getSelectedIndex();
+                int selectedIndexBarra2 = comboBoxes[1].getSelectedIndex();
+                int selectedIndexBarra3 = comboBoxes[2].getSelectedIndex();
+
+                if (selectedIndexBarra1 > 0 && selectedIndexBarra2 > 0 && selectedIndexBarra3 > 0) {
+                    origen = (String) comboBoxes[0].getSelectedItem();
+                    destino = (String) comboBoxes[1].getSelectedItem();
+                    fecha = (String) comboBoxes[2].getSelectedItem();
+
+                    dispose();
+
+                    Pasajes nuevopasaje = new Pasajes();
+                    nuevopasaje.filtro(InterfazGrafica.this);
+                    nuevopasaje.setVisible(true);
+                    nuevopasaje.interfazgrafica(InterfazGrafica.this);
+
+                    if(getAsientoDob()!=null) {
+                        nuevopasaje.datosdob=getDatadob();
+                        nuevopasaje.getDatosdob();
                         nuevopasaje.setasientodob=getAsientoDob();
                         nuevopasaje.getasientodob();
                     }
@@ -195,5 +227,11 @@ class InterfazGrafica extends JFrame {
     }
     public ArrayList<String> getAsientoDob(){
         return asientoDob;
+    }
+    public ArrayList<Object[]> getDatadob(){
+        return datadob;
+    }
+    public ArrayList<Object[]> getData(){
+        return data;
     }
 }
