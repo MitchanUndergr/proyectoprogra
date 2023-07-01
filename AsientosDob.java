@@ -12,10 +12,18 @@ public class AsientosDob extends JFrame {
     String desde,hasta,dia;
     private JButton botonReserva;
 
-    public ArrayList<String> seleAsientos=new ArrayList<>();
+    private void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
+        for (String elemento : arrayList1) {
+            arrayList2.add(elemento);
+        }
+    }
+
+    public ArrayList<Object[]> datosdob;
+
+    public ArrayList<String> seleAsientosdob=new ArrayList<>();
     private String[] vectorComposiciones;
     JButton[] botonesAsiento = new JButton[60];
-    ArrayList<String> seleccionAsientos = new ArrayList<>();
+    ArrayList<String> seleccionAsientosdob;
     public AsientosDob() {
 
         vectorComposiciones = new String[60];
@@ -147,10 +155,12 @@ public class AsientosDob extends JFrame {
 
 
     public void elegirdob(){
-        if(seleccionAsientos==null){
-            seleccionAsientos=new ArrayList<>();
+
+        if(seleccionAsientosdob==null){
+            seleccionAsientosdob=new ArrayList<>();
         }else{
-            for (String asiento : seleccionAsientos) {
+
+            for (String asiento : seleccionAsientosdob) {
                 for (int i = 0; i < botonesAsiento.length; i++) {
                     if (asiento.equals(vectorComposiciones[i])) {
                         ImageIcon imagenAsientoSeleccionado = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoResv.png");
@@ -178,8 +188,8 @@ public class AsientosDob extends JFrame {
                             Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                             ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                             botonesAsiento[finalI].setIcon(asientolisto2);
-                            seleccionAsientos.add(vectorComposiciones[finalI1]);
-                            seleAsientos.add(vectorComposiciones[finalI1]);
+                            //seleccionAsientosdob.add(vectorComposiciones[finalI1]);
+                            seleAsientosdob.add(vectorComposiciones[finalI1]);
                             break;
                         case 1:
                             ImageIcon imagenasiento3 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoDisp2.png");
@@ -187,8 +197,8 @@ public class AsientosDob extends JFrame {
                             Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                             ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                             botonesAsiento[finalI].setIcon(asientolisto3);
-                            seleccionAsientos.remove(vectorComposiciones[finalI1]);
-                            seleAsientos.remove(vectorComposiciones[finalI1]);
+                            //seleccionAsientosdob.remove(vectorComposiciones[finalI1]);
+                            seleAsientosdob.remove(vectorComposiciones[finalI1]);
                             break;
                     }
                     click++;
@@ -202,6 +212,11 @@ public class AsientosDob extends JFrame {
         dia=pasaje.getDia();
         desde=pasaje.getDesde();
         hasta=pasaje.getHasta();
+
+
+        if(datosdob==null){
+            datosdob=new ArrayList<>();
+        }
 
         JLabel origen1 = new JLabel(desde);
         origen1.setForeground(new Color(35, 35, 35)); // Color de fuente
@@ -234,9 +249,12 @@ public class AsientosDob extends JFrame {
 
         botonReserva.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (!seleccionAsientos.isEmpty()) {
+                if (!seleAsientosdob.isEmpty()) {
                     dispose();
                     Reserva nuevareserva = new Reserva();
+                    agregarContenido(seleAsientosdob,seleccionAsientosdob);
+                    datosdob.add(new Object[]{dia, desde, hasta,seleccionAsientosdob});
+                    nuevareserva.datosdobreserva=datosdob;
                     ArrayList<String> asiento=nuevareserva.agregaasieentosDob(AsientosDob.this);
                     nuevareserva.arrayasientodob=asiento;
                     nuevareserva.agregafiltroDob(AsientosDob.this);
@@ -248,8 +266,12 @@ public class AsientosDob extends JFrame {
         });
 
     }
-    public ArrayList getSeleccion() {
-        return seleccionAsientos;
+    public ArrayList getSelecciondob() {
+        return seleccionAsientosdob;
+    }
+
+    public ArrayList getSeleasientosdob(){
+        return seleAsientosdob;
     }
     public String getDia() {
         return dia;
@@ -263,8 +285,4 @@ public class AsientosDob extends JFrame {
         return hasta;
     }
 
-
 }
-
-
-
