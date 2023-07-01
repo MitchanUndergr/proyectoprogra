@@ -15,7 +15,7 @@ public class Pasajes extends JFrame {
     private String fechas;
     private JButton botonComprar;
 
-    private void mostrarDatos(List<DatosViaje> listaDatos) {
+    public void mostrarDatos(List<DatosViaje> listaDatos) {
 
         int[] x = {300,550,300,550};
         int[] y = {300, 300, 330,330};
