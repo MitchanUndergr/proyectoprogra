@@ -16,7 +16,7 @@ public class Asientos extends JFrame {
 
     private String[] vectorComposiciones;
 
-    private void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
+    public void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
         for (String elemento : arrayList1) {
             arrayList2.add(elemento);
         }
