@@ -7,3 +7,6 @@
 12:00,Santiago,Curico,Semi cama,Terminal Sur,Terminal Rodoviario,5000,40
 09:00,Curico,Santiago,Semi cama,Terminal Rodoviario,Terminal Sur,5000,40
 13:00,Curico,Santiago,Semi cama,Terminal Rodoviario,Terminal Sur,5000,40
+12:00,Concepción,Temuco,Semi cama,Terminal Sur,Terminal Rodoviario,5000,40
+09:00,Santiago,Temuco,Semi cama,Terminal Rodoviario,Terminal Sur,5000,40
+13:00,Curico,Temuco,Semi cama,Terminal Rodoviario,Terminal Sur,5000,40
