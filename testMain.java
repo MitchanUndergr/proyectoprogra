@@ -17,6 +17,9 @@ public class Main {
             }
         }
 
+        PasajesTest test5 = new PasajesTest();
+        test5.testMostrarDatos();
+        
         AsientosTest test4= new AsientosTest();
         test4.testAgregarContenido();
 
