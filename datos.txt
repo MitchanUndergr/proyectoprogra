@@ -14,3 +14,5 @@
 09:00,Temuco,Curico,Semi cama,Terminal Rodoviario,Terminal Rodoviario,5000,40
 09:00,Temuco,Concepción,Semi cama,Terminal Rodoviario,Terminal Collao,5000,40
 09:00,Temuco,Santiago,Semi cama,Terminal Rodoviario,Terminal Sur,5000,40
+09:00,Curico,Concepción,Semi cama,Terminal Rodoviario,Terminal Collao,5000,40
+09:00,Concepción,Curico,Semi cama,Terminal Rodoviario,Terminal Collao,5000,40
