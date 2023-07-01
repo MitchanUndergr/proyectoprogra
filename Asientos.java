@@ -15,6 +15,12 @@ public class Asientos extends JFrame {
     private JButton[] botonesAsiento = new JButton[40];
 
     private String[] vectorComposiciones;
+
+    private void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
+        for (String elemento : arrayList1) {
+            arrayList2.add(elemento);
+        }
+    }
     public ArrayList<String> seleccionAsientos;
     public ArrayList<String> seleAsientos=new ArrayList<>();
 
@@ -122,7 +128,7 @@ public class Asientos extends JFrame {
                             Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                             ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
                             botonesAsiento[finalI].setIcon(asientolisto2);
-                            seleccionAsientos.add(vectorComposiciones[finalI1]);
+                            //seleccionAsientos.add(vectorComposiciones[finalI1]);
                             seleAsientos.add(vectorComposiciones[finalI1]);
                             break;
                         case 1:
@@ -131,7 +137,7 @@ public class Asientos extends JFrame {
                             Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
                             ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
                             botonesAsiento[finalI].setIcon(asientolisto3);
-                            seleccionAsientos.remove(vectorComposiciones[finalI1]);
+                            //seleccionAsientos.remove(vectorComposiciones[finalI1]);
                             seleAsientos.remove(vectorComposiciones[finalI1]);
                             break;
                     }
@@ -178,8 +184,9 @@ public class Asientos extends JFrame {
 
         botonReserva.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (!seleccionAsientos.isEmpty()) {
+                if (!seleAsientos.isEmpty()) {
                     dispose();
+                    agregarContenido(seleAsientos,seleccionAsientos);
                     Reserva nuevareserva = new Reserva();
                     ArrayList<String> asiento=nuevareserva.agregaasieentos(Asientos.this);
                     nuevareserva.arrayasientos=asiento;
@@ -211,7 +218,4 @@ public class Asientos extends JFrame {
         return hasta;
     }
 
-    public InterfazGrafica interfaz(InterfazGrafica esta){
-        return esta;
-    }
 }
