@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class ReservaGUI extends JFrame {
     private Image imagenfondo1;
-    private int calFinal,precio,cantAsientos;
-    private String Asientoreservado, Origen, Destino, fechas,Hora,Tasiento;
+    private int calFinal, precio, cantAsientos;
+    private String Asientoreservado, Origen, Destino, fechas, Hora, Tasiento;
     private Reserva reserva;
-    public ReservaGUI() {
 
+    public ReservaGUI() {
+        // Configuración básica de la ventana
         setTitle("Reserva");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int screenWidth = 1350;
@@ -21,16 +22,17 @@ public class ReservaGUI extends JFrame {
         JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
         setContentPane(principal);
 
-        reserva= new Reserva();
-
+        reserva = new Reserva();
     }
-    public void ImplementarFiltro(){
+
+    // Método para mostrar los datos del filtro seleccionado en la interfaz gráfica
+    public void ImplementarFiltro() {
         Origen = reserva.getOrigen();
-        Destino =reserva.getDestino();
+        Destino = reserva.getDestino();
         fechas = reserva.getFechas();
-        Hora= reserva.getHora();
-        Tasiento=reserva.getTipoasiento();
-        precio=reserva.getPrecio();
+        Hora = reserva.getHora();
+        Tasiento = reserva.getTipoasiento();
+        precio = reserva.getPrecio();
 
         JLabel origen1 = new JLabel(Origen);
         origen1.setForeground(new Color(35, 35, 35)); // Color de fuente
@@ -56,61 +58,62 @@ public class ReservaGUI extends JFrame {
         fecha.setBounds(470, 110, 100, 30);
         add(fecha);
     }
-    public void MuestraReserva(Asientos asientosreservados){
+
+    // Método para mostrar los detalles de la reserva realizada en la interfaz gráfica
+    public void MuestraReserva(Asientos asientosreservados) {
         JLabel[] labels = new JLabel[7];
-        ArrayList<String> aux=null;
+        ArrayList<String> aux = null;
 
-        if(asientosreservados.getSeleAsientos().size()!=0){
-            aux=asientosreservados.getSeleAsientos();
-            calFinal= aux.size()*precio;
-            Asientoreservado="Semi cama";
-
-        }
-        else if(asientosreservados.getSeleasientosdob().size()!=0){
-            aux=asientosreservados.getSeleasientosdob();
-            calFinal= aux.size()*precio;
-            Asientoreservado="Salon cama";
+        if (asientosreservados.getSeleAsientos().size() != 0) {
+            aux = asientosreservados.getSeleAsientos();
+            calFinal = aux.size() * precio;
+            Asientoreservado = "Semi cama";
+        } else if (asientosreservados.getSeleasientosdob().size() != 0) {
+            aux = asientosreservados.getSeleasientosdob();
+            calFinal = aux.size() * precio;
+            Asientoreservado = "Salon cama";
         }
 
-        cantAsientos=aux.size();
+        cantAsientos = aux.size();
 
         Font fontNueva = new Font("Arial", Font.BOLD, 16);
-        labels[1]= new JLabel("DETALLES DE LA COMPRA");
+        labels[1] = new JLabel("DETALLES DE LA COMPRA");
         labels[1].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[1].setFont(fontNueva);
         labels[1].setBounds(300, 350, 600, 30);
         add(labels[1]);
 
-        labels[2]= new JLabel("Tipo de Asiento: " + Asientoreservado);
+        labels[2] = new JLabel("Tipo de Asiento: " + Asientoreservado);
         labels[2].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[2].setFont(fontNueva);
         labels[2].setBounds(300, 400, 600, 30);
         add(labels[2]);
 
-        labels[3]= new JLabel("Asientos : " + aux);
+        labels[3] = new JLabel("Asientos : " + aux);
         labels[3].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[3].setFont(fontNueva);
         labels[3].setBounds(300, 450, 600, 30);
         add(labels[3]);
 
-        labels[4]= new JLabel("Cantidad de asientos: " + cantAsientos + " x " + precio);
+        labels[4] = new JLabel("Cantidad de asientos: " + cantAsientos + " x " + precio);
         labels[4].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[4].setFont(fontNueva);
         labels[4].setBounds(300, 500, 600, 30);
         add(labels[4]);
 
-        labels[5]= new JLabel("Precio final: " + calFinal);
+        labels[5] = new JLabel("Precio final: " + calFinal);
         labels[5].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[5].setFont(fontNueva);
         labels[5].setBounds(300, 550, 600, 30);
         add(labels[5]);
 
-        labels[6]= new JLabel("Hora de Salida: " + Hora);
+        labels[6] = new JLabel("Hora de Salida: " + Hora);
         labels[6].setForeground(new Color(35, 35, 35)); // Color de fuente
         labels[6].setFont(fontNueva);
         labels[6].setBounds(300, 600, 600, 30);
         add(labels[6]);
 
+        // Mostrar un mensaje de confirmación y opciones al usuario
         SwingUtilities.invokeLater(() -> {
 
             int option = JOptionPane.showOptionDialog(
@@ -125,7 +128,7 @@ public class ReservaGUI extends JFrame {
             );
 
             if (option == JOptionPane.YES_OPTION) {
-                // Abrir una nueva interfaz gráfica
+                // Abrir una nueva interfaz gráfica si el usuario desea hacer otra compra
                 EventQueue.invokeLater(() -> {
                     dispose();
                     InterfazGrafica nuevaInterfaz = new InterfazGrafica();
@@ -133,7 +136,7 @@ public class ReservaGUI extends JFrame {
                     nuevaInterfaz.BarrasSeleccion();
                 });
             } else {
-                // Cerrar la aplicación
+                // Cerrar la aplicación si el usuario no desea hacer otra compra
                 System.exit(0);
             }
         });
