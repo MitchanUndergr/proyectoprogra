@@ -9,49 +9,40 @@ class InterfazGrafica extends JFrame {
     private int indiceSeleccionadoBarra1 = -1;
     private Image imagenfondo;
     private JPanel panel1;
-    private String origen;
-    private String destino;
-
+    private String origen, destino, fecha;
     private JComboBox<String>[] comboBoxes;
-    private String fecha;
-
     private JButton boton;
-    public ArrayList<String >asiento,asientoDob;
-    public  ArrayList<Object[]> datadob = new ArrayList<>();
-    public  ArrayList<Object[]> data = new ArrayList<>();
+    private PasajesGUI pasajesgui;
+    private Filtro_Pasajes filtro;
+    private ArrayList<String> listaCiudades;
     public InterfazGrafica() {
         // Configuración de la ventana
-
-
         setTitle("Autobuses C&N");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null); // Establecer null layout
-
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
-
-        // Configurar el tamaño de la ventana para ocupar toda la pantalla
+        int screenWidth =1350;
+        int screenHeight =800;
         setSize(screenWidth, screenHeight);
+        setResizable(false);
+        setLocationRelativeTo(null);
 
-        imagenfondo = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/autobus2.png").getImage();
+        //Imagen de fondo
+        imagenfondo = new ImageIcon("src/dibujos/autobus2.png").getImage();
         imagenfondo = imagenfondo.getScaledInstance(screenWidth, screenHeight, Image.SCALE_SMOOTH);
         JLabel principal = new JLabel(new ImageIcon(imagenfondo));
         setContentPane(principal);
-
 
         panel1 = new JPanel();
         panel1.setBounds(620, 398, 200, 30);
         panel1.setOpaque(false);
 
-        Ciudades ciudades = new Ciudades("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/Archivos/ciudades.txt");
-        ArrayList<String> listaCiudades = ciudades.getCiudades();
 
-        String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día"};
-
-        comboBoxes = new JComboBox[3];
+        Ciudades ciudades = new Ciudades("src/Archivos/ciudades.txt");
+        listaCiudades = ciudades.getCiudades();
 
         // Crear las barras desplegables y establecer sus coordenadas
+        String[] textos = {"¿De donde partes?", "¿A donde quieres ir?", "Día"};
+        comboBoxes = new JComboBox[3];
         for (int i = 0; i < 3; i++) {
             comboBoxes[i] = new JComboBox<>();
             comboBoxes[i].setMaximumSize(new Dimension(200, comboBoxes[i].getPreferredSize().height));
@@ -96,22 +87,19 @@ class InterfazGrafica extends JFrame {
                     comboBoxes[2].addItem(fechaFormateada);
                 }
             }
-
-
         }
-
 
         // Creación del botón y establecer sus coordenadas
         boton = new JButton("Buscar");
         int buttonX = 620;
         int buttonY = 398;
-
         boton.setBounds(buttonX, buttonY, 200, 30); // Establecer posición y tamaño
         panel1.add(boton);
         add(panel1); // Agregar al contenedor principal
+    }
 
-        setVisible(true);
-
+    public void BarrasSeleccion(){
+        //Aqui lo que se seleccione en la barra1 no aparecera en la barra2
         comboBoxes[0].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Obtener el índice seleccionado en la primera barra desplegable
@@ -135,15 +123,6 @@ class InterfazGrafica extends JFrame {
             }
         });
 
-
-
-    }
-
-    public String getOrigen() {
-        return origen;
-    }
-
-    public void traslado(){
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndexBarra1 = comboBoxes[0].getSelectedIndex();
@@ -154,84 +133,17 @@ class InterfazGrafica extends JFrame {
                     origen = (String) comboBoxes[0].getSelectedItem();
                     destino = (String) comboBoxes[1].getSelectedItem();
                     fecha = (String) comboBoxes[2].getSelectedItem();
-
+                    GuardaDatos.guardarDatosU(origen,destino,fecha);
                     dispose();
 
-                    Pasajes nuevopasaje = new Pasajes();
-                    nuevopasaje.filtro(InterfazGrafica.this);
-                    nuevopasaje.setVisible(true);
-                    nuevopasaje.interfazgrafica(InterfazGrafica.this);
-
-                    if(getAsiento()!=null) {
-                        nuevopasaje.setasiento=getAsiento();
-                        nuevopasaje.getasiento();
-                    }
-
+                    pasajesgui = new PasajesGUI();
+                    pasajesgui.ImplementarFiltro();
+                    pasajesgui.mostrarDatos();
+                    pasajesgui.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Selecciona un origen, destino y horario válidos");
                 }
             }
         });
-    }
-
-    public void trasladodob(){
-        boton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int selectedIndexBarra1 = comboBoxes[0].getSelectedIndex();
-                int selectedIndexBarra2 = comboBoxes[1].getSelectedIndex();
-                int selectedIndexBarra3 = comboBoxes[2].getSelectedIndex();
-
-                if (selectedIndexBarra1 > 0 && selectedIndexBarra2 > 0 && selectedIndexBarra3 > 0) {
-                    origen = (String) comboBoxes[0].getSelectedItem();
-                    destino = (String) comboBoxes[1].getSelectedItem();
-                    fecha = (String) comboBoxes[2].getSelectedItem();
-
-                    dispose();
-
-                    Pasajes nuevopasaje = new Pasajes();
-                    nuevopasaje.filtro(InterfazGrafica.this);
-                    nuevopasaje.setVisible(true);
-                    nuevopasaje.interfazgrafica(InterfazGrafica.this);
-
-                    if(getAsientoDob()!=null) {
-                        nuevopasaje.datosdob=getDatadob();
-                        nuevopasaje.getDatosdob();
-                        nuevopasaje.setasientodob=getAsientoDob();
-                        nuevopasaje.getasientodob();
-                    }
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Selecciona un origen, destino y horario válidos");
-                }
-            }
-        });
-    }
-
-    public String getDestino() {
-        return destino;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public ArrayList<String> arrayAsientosDob(Reserva reserva){
-        return reserva.getArrayasientodob();
-    }
-    public ArrayList<String> arrayAsientos(Reserva reserva){
-        return reserva.getArrayasientos();
-    }
-
-    public ArrayList<String> getAsiento(){
-        return asiento;
-    }
-    public ArrayList<String> getAsientoDob(){
-        return asientoDob;
-    }
-    public ArrayList<Object[]> getDatadob(){
-        return datadob;
-    }
-    public ArrayList<Object[]> getData(){
-        return data;
     }
 }
