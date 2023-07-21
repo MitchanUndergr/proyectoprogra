@@ -77,7 +77,7 @@ public class Asientos {
             e.printStackTrace();
         }
 
-        // Leer datos desde otro archivo de texto para obtener los asientos disponibles
+        // Leer datos desde otro archivo de texto para obtener los asientos ocupados
         try {
             FileReader fileReader = new FileReader("src/Archivos/filtro_asientos.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -103,13 +103,13 @@ public class Asientos {
 
                 // Verificar si los datos coinciden con los de la última línea leída
                 if (origenPasaje.equals(Origen) && destinoPasaje.equals(Destino) && fechaPasaje.equals(fechas) && horaPasaje.equals(Hora) && tipoAsientoPasaje.equals(Tipoasiento)) {
-                    // Si coinciden y el tipo de asiento es "Semi cama", actualizar los asientos disponibles
+                    // Si coinciden y el tipo de asiento es "Semi cama", actualizar los asientos ocupados
                     if (Tipoasiento.equals("Semi cama")) {
                         HashSet<String> setAsientos = new HashSet<>(seleccionAsientos);
                         setAsientos.addAll(arrayAsientos);
                         seleccionAsientos = new ArrayList<>(setAsientos);
                     }
-                    // Si coinciden y el tipo de asiento es "Salon cama", actualizar los asientos disponibles
+                    // Si coinciden y el tipo de asiento es "Salon cama", actualizar los asientos ocupados
                     else if (Tipoasiento.equals("Salon cama")) {
                         HashSet<String> setAsientosdob = new HashSet<>(seleccionAsientosdob);
                         setAsientosdob.addAll(arrayAsientos);
