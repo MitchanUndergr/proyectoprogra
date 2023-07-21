@@ -1,31 +1,22 @@
-import javax.swing.*;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import java.util.HashSet;
 
-public class Asientos extends JFrame {
-
-    Image imagenfondo1,imagen2;
-    String desde,hasta,dia;
-    private JButton botonReserva;
-    private JButton[] botonesAsiento = new JButton[40];
-
-    private String[] vectorComposiciones;
-
-    public void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
+public class Asientos {
+    private void agregarContenido(ArrayList<String> arrayList1, ArrayList<String> arrayList2) {
         for (String elemento : arrayList1) {
             arrayList2.add(elemento);
         }
     }
-    public ArrayList<String> seleccionAsientos;
-    public ArrayList<String> seleAsientos=new ArrayList<>();
+    private ArrayList<String> seleccionAsientos = new ArrayList<>(),seleAsientos = new ArrayList<>(),seleccionAsientosdob = new ArrayList<>(),seleAsientosdob = new ArrayList<>();
+    private String[] vectorComposiciones = new String[40],vectorComposicionesdob = new String[60];
+    private String Origen, Destino, fechas, Hora, Tipoasiento;
 
+    private int precio;
     public Asientos() {
-        vectorComposiciones = new String[40];
+        // Código de inicialización del vectorComposiciones
         int indice = 0;
 
         for (char letra = 'A'; letra <= 'D'; letra++) {
@@ -39,183 +30,176 @@ public class Asientos extends JFrame {
             }
         }
 
-        setTitle("Asientos");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int indice2 = 0;
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
-
-        // Configurar el tamaño de la ventana para ocupar toda la pantalla
-        setSize(screenWidth, screenHeight);
-
-        imagenfondo1 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/autobus3.png").getImage();
-        imagenfondo1 = imagenfondo1.getScaledInstance(screenWidth, screenHeight, Image.SCALE_SMOOTH);
-        JLabel principal = new JLabel(new ImageIcon(imagenfondo1));
-        setContentPane(principal);
-
-        imagen2 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/bus4.png").getImage();
-        imagen2 = imagen2.getScaledInstance(450, 350, Image.SCALE_SMOOTH);
-        JLabel busdoble = new JLabel(new ImageIcon(imagen2));
-        busdoble.setBounds(550, 250, 450, 350);
-        add(busdoble);
-
-        //Asientos
-
-         // Crear un vector de botones con tamaño 36
-
-        for (int i = 0; i < 20; i++) {
-            botonesAsiento[i] = new JButton();
-            botonesAsiento[i].setFont(botonesAsiento[i].getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
-            int posX = 240 + (i % 2) * 40; // Calcular la posición en X del botón
-            int posY = 270 + (i / 2) * 40; // Calcular la posición en Y del botón
-            botonesAsiento[i].setBounds(posX, posY, 30, 30);
-
-            ImageIcon imagenAsiento = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoDisp1.png");
-            Image imagenAsientoEscalada = imagenAsiento.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-            ImageIcon asientoListo = new ImageIcon(imagenAsientoEscalada);
-            botonesAsiento[i].setIcon(asientoListo);
-
-            add(botonesAsiento[i]);
-        }
-
-        for (int i = 20; i < 40; i++) {
-            botonesAsiento[i] = new JButton();
-            botonesAsiento[i].setFont(botonesAsiento[i].getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
-            int posX = 360 + (i % 2) * 40; // Calcular la posición en X del botón
-            int posY = 270 + ((i-20) / 2) * 40; // Calcular la posición en Y del botón
-            botonesAsiento[i].setBounds(posX, posY, 30, 30);
-
-            ImageIcon imagenAsiento = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoDisp1.png");
-            Image imagenAsientoEscalada = imagenAsiento.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-            ImageIcon asientoListo = new ImageIcon(imagenAsientoEscalada);
-            botonesAsiento[i].setIcon(asientoListo);
-
-            add(botonesAsiento[i]);
-        }
-    }
-
-    public void elegir(){
-
-        if(seleccionAsientos==null){
-            seleccionAsientos=new ArrayList<>();
-        }else{
-            for (String asiento : seleccionAsientos) {
-                for (int i = 0; i < botonesAsiento.length; i++) {
-                    if (asiento.equals(vectorComposiciones[i])) {
-                        ImageIcon imagenAsientoSeleccionado = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoResv.png");
-                        Image imagenAsientoEscalada = imagenAsientoSeleccionado.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-                        ImageIcon asientoSeleccionado = new ImageIcon(imagenAsientoEscalada);
-                        botonesAsiento[i].setIcon(asientoSeleccionado);
-                        break;
-                    }
-                }
+        for (char letra = 'A'; letra <= 'F'; letra++) {
+            // Iterar sobre los números del 1 al 11
+            for (int numero = 1; numero <= 10; numero++) {
+                // Combinar la letra y el número en una composición
+                String composicion = letra + Integer.toString(numero);
+                // Agregar la composición al vector
+                vectorComposicionesdob[indice2] = composicion;
+                indice2++;
             }
         }
 
-        for (int i = 0; i < botonesAsiento.length; i++) {
-            int finalI = i;
-            int finalI1 = i;
-            botonesAsiento[i].addActionListener(new ActionListener() {
-                int click = 0;
+        try {
+            FileReader fileReader = new FileReader("src/Archivos/DatosPasaje.txt");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String linea;
 
-                @Override
-                public void actionPerformed(ActionEvent event) {
-                    switch (click % 2) {
-                        case 0:
-                            ImageIcon imagenasiento2 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoResv.png");
-                            Image imagenasie2 = imagenasiento2.getImage();
-                            Image nuevoasiento2 = imagenasie2.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-                            ImageIcon asientolisto2 = new ImageIcon(nuevoasiento2);
-                            botonesAsiento[finalI].setIcon(asientolisto2);
-                            //seleccionAsientos.add(vectorComposiciones[finalI1]);
-                            seleAsientos.add(vectorComposiciones[finalI1]);
-                            break;
-                        case 1:
-                            ImageIcon imagenasiento3 = new ImageIcon("C:/Users/user/Downloads/PROGRA2/progra2proyecto/src/dibujos/AsientoDisp2.png");
-                            Image imagenasie3 = imagenasiento3.getImage();
-                            Image nuevoasiento3 = imagenasie3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
-                            ImageIcon asientolisto3 = new ImageIcon(nuevoasiento3);
-                            botonesAsiento[finalI].setIcon(asientolisto3);
-                            //seleccionAsientos.remove(vectorComposiciones[finalI1]);
-                            seleAsientos.remove(vectorComposiciones[finalI1]);
-                            break;
+            // Variables para almacenar los datos de la última línea
+            String ultimoOrigen = null;
+            String ultimoDestino = null;
+            String ultimaFecha = null;
+            String ultimaHora = null;
+            String ultimoTasiento = null;
+            int ultimoprecio = 0;
+
+            while ((linea = bufferedReader.readLine()) != null) {
+                // Separar los datos utilizando el carácter de coma como delimitador
+                String[] datos = linea.split(",");
+
+                // Almacenar los datos en variables temporales
+                ultimoOrigen = datos[0].trim();
+                ultimoDestino = datos[1].trim();
+                ultimaFecha = datos[2].trim();
+                ultimaHora = datos[3].trim();
+                ultimoTasiento = datos[4].trim();
+                ultimoprecio = Integer.parseInt(datos[5]);
+
+            }
+
+            // Actualizar las variables de la instancia con los datos de la última línea
+            this.Origen = ultimoOrigen;
+            this.Destino = ultimoDestino;
+            this.fechas = ultimaFecha;
+            this.Hora = ultimaHora;
+            this.Tipoasiento= ultimoTasiento;
+            this.precio= ultimoprecio;
+
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileReader fileReader = new FileReader("src/Archivos/filtro_asientos.txt");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String linea;
+
+            while ((linea = bufferedReader.readLine()) != null) {
+                // Separar los datos utilizando el carácter de coma como delimitador
+                String[] datosPasaje = linea.split(",");
+
+                // Comprobar si los datos de Origen, Destino, fechas, Hora y Tipoasiento coinciden
+                String origenPasaje = datosPasaje[0].trim();
+                String destinoPasaje = datosPasaje[1].trim();
+                String fechaPasaje = datosPasaje[2].trim();
+                String horaPasaje = datosPasaje[3].trim();
+                String tipoAsientoPasaje = datosPasaje[4].trim();
+                int precioPasaje = Integer.parseInt(datosPasaje[5].trim());
+                ArrayList<String> arrayAsientos = new ArrayList<>();
+                for (int i = 6; i < datosPasaje.length; i++) {
+                    String[] asientos = datosPasaje[i].trim().split("\\s+"); // Dividir los datos de asientos por espacios
+                    for (String asiento : asientos) {
+                        if (!arrayAsientos.contains(asiento)) {
+                            arrayAsientos.add(asiento); // Agregar los asientos individuales al ArrayList
+                        }
                     }
-                    click++;
                 }
-            });
+
+                // Si hay coincidencia, guardar los datos adicionales en el ArrayList correspondiente
+                if (origenPasaje.equals(Origen) && destinoPasaje.equals(Destino) && fechaPasaje.equals(fechas) && horaPasaje.equals(Hora) && tipoAsientoPasaje.equals(Tipoasiento)) {
+                    if (Tipoasiento.equals("Semi cama")) {
+                        HashSet<String> setAsientos = new HashSet<>(seleccionAsientos); // Convertimos seleccionAsientos a un HashSet temporal
+                        setAsientos.addAll(arrayAsientos); // Agregamos todos los elementos de arrayAsientos al HashSet temporal
+
+                        seleccionAsientos = new ArrayList<>(setAsientos);
+                    } else if (Tipoasiento.equals("Salon cama")) {
+                        HashSet<String> setAsientosdob = new HashSet<>(seleccionAsientosdob); // Convertimos seleccionAsientosdob a un HashSet temporal
+                        setAsientosdob.addAll(arrayAsientos); // Agregamos todos los elementos de arrayAsientos al HashSet temporal
+
+                        seleccionAsientosdob = new ArrayList<>(setAsientosdob);
+                    }
+                }
+            }
+
+            bufferedReader.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
 
-    public void agregafiltro(Pasajes pasaje){
-        dia=pasaje.getDia();
-        desde=pasaje.getDesde();
-        hasta=pasaje.getHasta();
-
-        JLabel origen1 = new JLabel(desde);
-        origen1.setForeground(new Color(35, 35, 35)); // Color de fuente
-        Font font = origen1.getFont();
-        Font fontNueva = font.deriveFont(font.getSize() + 2.0f); // Tamaño de la fuente
-        origen1.setFont(fontNueva);
-        origen1.setBounds(95, 110, 100, 30);
-        add(origen1);
-
-        JLabel destino = new JLabel(hasta);
-        destino.setForeground(new Color(35, 35, 35)); // Color de fuente
-        Font font2 = destino.getFont();
-        Font fontNueva2 = font2.deriveFont(font.getSize() + 2.0f); // Tamaño de la fuente
-        destino.setFont(fontNueva2);
-        destino.setBounds(285, 110, 100, 30);
-        add(destino);
-
-        JLabel fecha = new JLabel(dia);
-        fecha.setForeground(new Color(35, 35, 35)); // Color de fuente
-        Font font3 = fecha.getFont();
-        Font fontNueva3 = font3.deriveFont(font.getSize() + 2.0f); // Tamaño de la fuente
-        fecha.setFont(fontNueva3);
-        fecha.setBounds(470, 110, 100, 30);
-        add(fecha);
-
-        botonReserva = new JButton("Reservar");
-        botonReserva.setFont(botonReserva.getFont().deriveFont(Font.PLAIN)); // Cambiar el estilo de fuente del botón
-        botonReserva.setBounds(700, 600, 100, 30);
-        add(botonReserva);
-
-        botonReserva.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (!seleAsientos.isEmpty()) {
-                    dispose();
-                    agregarContenido(seleAsientos,seleccionAsientos);
-                    Reserva nuevareserva = new Reserva();
-                    ArrayList<String> asiento=nuevareserva.agregaasieentos(Asientos.this);
-                    nuevareserva.arrayasientos=asiento;
-                    nuevareserva.agregafiltro(Asientos.this);
-                    nuevareserva.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(Asientos.this, "Debe seleccionar al menos un asiento.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
+    public void addAsiento(int indice) {
+        String asiento = vectorComposiciones[indice];
+        if (!seleccionAsientos.contains(asiento)) {
+            seleAsientos.add(asiento);
+        }
     }
-    public ArrayList<String> getSeleccion() {
+    public void eraseAsiento(int indice){
+        seleAsientos.remove(vectorComposiciones[indice]);
+    }
+    public void addAsientodob(int indice) {
+        String asiento = vectorComposicionesdob[indice];
+        if (!seleccionAsientosdob.contains(asiento)) {
+            seleAsientosdob.add(asiento);
+        }
+    }
+    public void eraseAsientodob(int indice){
+        seleAsientosdob.remove(vectorComposicionesdob[indice]);
+    }
+    public ArrayList<String> AsientosSeleccionados(){
+        agregarContenido(seleAsientos,seleccionAsientos);
         return seleccionAsientos;
     }
 
+
+    public ArrayList<String> AsientosSeleccionadosDob(){
+        agregarContenido(seleAsientosdob,seleccionAsientosdob);
+        return seleccionAsientosdob;
+    }
     public ArrayList<String> getSeleAsientos() {
         return seleAsientos;
     }
-
-    public String getDia() {
-        return dia;
+    public ArrayList getSeleasientosdob(){
+        return seleAsientosdob;
+    }
+    public String valor_asiento(int indice){
+        String valor=vectorComposiciones[indice];
+        return valor;
     }
 
-    public String getDesde() {
-        return desde;
+    public String valor_asientodob(int indice){
+        String valor=vectorComposicionesdob[indice];
+        return valor;
     }
 
-    public String getHasta() {
-        return hasta;
+    public void DatosParaReserva(){
+        GuardaDatos.guardarDatosD(Origen,Destino,fechas,Hora,Tipoasiento,precio,seleccionAsientos);
     }
 
+    public void DatosParaReservaDob(){
+        GuardaDatos.guardarDatosD(Origen,Destino,fechas,Hora,Tipoasiento,precio,seleccionAsientosdob);
+    }
+
+    public String getOrigen(){
+        return Origen;
+    }
+
+    public String getDestino(){
+        return Destino;
+    }
+    public String getFechas(){
+        return fechas;
+    }
+
+    public ArrayList<String> getSeleccionAsientos(){
+        return seleccionAsientos;
+    }
+    public ArrayList<String> getSeleccionAsientosdob(){
+        return seleccionAsientosdob;
+    }
 }
