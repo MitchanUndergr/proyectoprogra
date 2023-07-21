@@ -3,11 +3,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Reserva {
+    private String Origen, Destino, fechas, Hora, Tipoasiento;
+    private int precio;
 
-    private String Origen,Destino,fechas,Hora,Tipoasiento;
-    int precio;
-    public Reserva(){
+    // Constructor de la clase Reserva
+    public Reserva() {
         try {
+            // Leer el archivo "DatosPasaje.txt" que contiene los datos de la última reserva
             FileReader fileReader = new FileReader("src/Archivos/DatosPasaje.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String linea;
@@ -20,6 +22,7 @@ public class Reserva {
             String ultimoTasiento = null;
             int ultimoprecio = 0;
 
+            // Leer el archivo línea por línea hasta llegar a la última línea
             while ((linea = bufferedReader.readLine()) != null) {
                 // Separar los datos utilizando el carácter de coma como delimitador
                 String[] datos = linea.split(",");
@@ -31,7 +34,6 @@ public class Reserva {
                 ultimaHora = datos[3].trim();
                 ultimoTasiento = datos[4].trim();
                 ultimoprecio = Integer.parseInt(datos[5]);
-
             }
 
             // Actualizar las variables de la instancia con los datos de la última línea
@@ -39,8 +41,8 @@ public class Reserva {
             this.Destino = ultimoDestino;
             this.fechas = ultimaFecha;
             this.Hora = ultimaHora;
-            this.Tipoasiento= ultimoTasiento;
-            this.precio= ultimoprecio;
+            this.Tipoasiento = ultimoTasiento;
+            this.precio = ultimoprecio;
 
             bufferedReader.close();
         } catch (IOException e) {
@@ -48,22 +50,28 @@ public class Reserva {
         }
     }
 
-    public String getOrigen(){
+    // Métodos para obtener los atributos de la reserva
+    public String getOrigen() {
         return Origen;
     }
-    public String getDestino(){
+
+    public String getDestino() {
         return Destino;
     }
-    public String getFechas(){
+
+    public String getFechas() {
         return fechas;
     }
-    public String getHora(){
+
+    public String getHora() {
         return Hora;
     }
-    public String getTipoasiento(){
+
+    public String getTipoasiento() {
         return Tipoasiento;
     }
-    public int getPrecio(){
+
+    public int getPrecio() {
         return precio;
     }
 }
