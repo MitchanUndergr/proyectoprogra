@@ -2,17 +2,25 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class AsientosGUI extends JFrame {
+    // Atributos de la clase
     private Asientos asientos;
     private String Origen, Destino, fechas;
-    public AsientosGUI(){
-        asientos= new Asientos();
+
+    // Constructor de la clase
+    public AsientosGUI() {
+        asientos = new Asientos();
     }
+
+    // Método abstracto para elegir asientos (debe ser implementado por las subclases)
     public abstract void ElegirAsientos();
-    public void ImplementarFiltro(){
+
+    // Método para implementar el filtro y mostrar los detalles de la compra
+    public void ImplementarFiltro() {
         Origen = asientos.getOrigen();
-        Destino =asientos.getDestino();
+        Destino = asientos.getDestino();
         fechas = asientos.getFechas();
 
+        // Crear etiquetas para mostrar los detalles del viaje
         JLabel origen1 = new JLabel(Origen);
         origen1.setForeground(new Color(35, 35, 35)); // Color de fuente
         Font font = origen1.getFont();
