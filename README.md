@@ -18,3 +18,7 @@ Reserva se divide en dos clases: Reserva, que contiene la logica de Reserva y Re
 Se actualiza javadoc y se crean pruebas unitarias de las clases logicas.
 
 Se actualiza el informe. 
+
+En los archivos rar se encuentran las carpetas necesarias para que el programa funcione correctamente.
+
+las imagenes sueltas corresponden a la vista de la interfaz y el UML
