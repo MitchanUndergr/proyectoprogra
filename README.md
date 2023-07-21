@@ -14,3 +14,7 @@ Lo que anteriormente era Asientos y AsientosDob, donde asientos contenia la logi
 Se crea tambien AsientoGUIFactory que se encarga de fabricar tipos de AsientosGUI.
 
 Reserva se divide en dos clases: Reserva, que contiene la logica de Reserva y ReservaGUI que representa la interfaz grafica de Reserva
+
+Se actualiza javadoc y se crean pruebas unitarias de las clases logicas.
+
+Se actualiza el informe. 
