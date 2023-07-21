@@ -5,7 +5,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+// Clase que representa la interfaz gráfica de la aplicación de Autobuses C&N
 class InterfazGrafica extends JFrame {
+    // Variables miembro de la clase
     private int indiceSeleccionadoBarra1 = -1;
     private Image imagenfondo;
     private JPanel panel1;
@@ -15,6 +18,8 @@ class InterfazGrafica extends JFrame {
     private PasajesGUI pasajesgui;
     private Filtro_Pasajes filtro;
     private ArrayList<String> listaCiudades;
+
+    // Constructor de la clase
     public InterfazGrafica() {
         // Configuración de la ventana
         setTitle("Autobuses C&N");
@@ -32,11 +37,12 @@ class InterfazGrafica extends JFrame {
         JLabel principal = new JLabel(new ImageIcon(imagenfondo));
         setContentPane(principal);
 
+        // Panel que contendrá el botón de búsqueda
         panel1 = new JPanel();
         panel1.setBounds(620, 398, 200, 30);
         panel1.setOpaque(false);
 
-
+        // Cargar la lista de ciudades desde un archivo de texto
         Ciudades ciudades = new Ciudades("src/Archivos/ciudades.txt");
         listaCiudades = ciudades.getCiudades();
 
@@ -61,19 +67,18 @@ class InterfazGrafica extends JFrame {
             add(label);
             add(comboBoxes[i]); // Agregar al contenedor principal
 
-            if(i==0){
+            // Agregar opciones a las barras desplegables según el índice actual
+            if (i == 0) {
                 comboBoxes[i].addItem("Origen");
                 for (String ciudad : listaCiudades) {
                     comboBoxes[i].addItem(ciudad);
                 }
-            }
-            else if(i==1){
+            } else if (i == 1) {
                 comboBoxes[i].addItem("Destino");
                 for (String ciudad : listaCiudades) {
                     comboBoxes[i].addItem(ciudad);
                 }
-            }
-            else {
+            } else {
                 comboBoxes[2].addItem("fecha");
 
                 // Obtener la fecha actual
@@ -98,8 +103,9 @@ class InterfazGrafica extends JFrame {
         add(panel1); // Agregar al contenedor principal
     }
 
+    // Método para establecer la lógica de selección en las barras desplegables y el botón de búsqueda
     public void BarrasSeleccion(){
-        //Aqui lo que se seleccione en la barra1 no aparecera en la barra2
+        // Aquí se configura el evento para cuando se selecciona un elemento en la barra 1
         comboBoxes[0].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Obtener el índice seleccionado en la primera barra desplegable
@@ -109,7 +115,7 @@ class InterfazGrafica extends JFrame {
                 if (selectedIndex != indiceSeleccionadoBarra1) {
                     comboBoxes[1].removeAllItems(); // Eliminar todos los elementos de la barra 2
 
-                    // Agregar todos los elementos de la listaCiudades a la barra 2
+                    // Agregar todos los elementos de la listaCiudades a la barra 2 excepto el seleccionado en la barra 1
                     comboBoxes[1].addItem("Destino");
                     for (String ciudad : listaCiudades) {
                         // Si el índice de la ciudad no coincide con el índice seleccionado en la barra 1, agregarlo
@@ -123,23 +129,26 @@ class InterfazGrafica extends JFrame {
             }
         });
 
+        // Configurar evento para el botón de búsqueda
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndexBarra1 = comboBoxes[0].getSelectedIndex();
                 int selectedIndexBarra2 = comboBoxes[1].getSelectedIndex();
                 int selectedIndexBarra3 = comboBoxes[2].getSelectedIndex();
 
+                // Verificar que se haya seleccionado una opción válida en todas las barras desplegables
                 if (selectedIndexBarra1 > 0 && selectedIndexBarra2 > 0 && selectedIndexBarra3 > 0) {
                     origen = (String) comboBoxes[0].getSelectedItem();
                     destino = (String) comboBoxes[1].getSelectedItem();
                     fecha = (String) comboBoxes[2].getSelectedItem();
-                    GuardaDatos.guardarDatosU(origen,destino,fecha);
-                    dispose();
+                    GuardaDatos.guardarDatosU(origen, destino, fecha); // Guardar los datos seleccionados
+                    dispose(); // Cerrar la ventana actual
 
+                    // Crear una nueva ventana para mostrar los resultados
                     pasajesgui = new PasajesGUI();
                     pasajesgui.ImplementarFiltro();
                     pasajesgui.mostrarDatos();
-                    pasajesgui.setVisible(true);
+                    pasajesgui.setVisible(true); // Hacer visible la nueva ventana
                 } else {
                     JOptionPane.showMessageDialog(null, "Selecciona un origen, destino y horario válidos");
                 }
