@@ -199,4 +199,11 @@ public class Asientos {
     public ArrayList<String> getSeleccionAsientosdob() {
         return seleccionAsientosdob;
     }
+
+    public ArrayList<String> getSeleAsientos() {
+        return seleAsientos;
+    }
+    public ArrayList getSeleasientosdob(){
+        return seleAsientosdob;
+    }
 }
